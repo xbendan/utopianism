@@ -1,25 +1,16 @@
-package me.rainbowmeowcat.befall.mathmatic;
+package io.myosotisdev.utopianism.util;
 
-import org.bukkit.scheduler.BukkitTask;
-
-import javax.annotation.Nullable;
+import org.jetbrains.annotations.Nullable;
 
 public class ValueInt extends Number
 {
     private String source;
     private int value;
-    private BukkitTask taskControl;
     
     public ValueInt(@Nullable String source, int value)
     {
-        this(source, value, null);
-    }
-    
-    public ValueInt(@Nullable String source, int value, BukkitTask task)
-    {
         this.source = source;
         this.value = value;
-        this.taskControl = task;
     }
     
     public String getSource()
@@ -27,22 +18,14 @@ public class ValueInt extends Number
         return source;
     }
     
-    public BukkitTask getTaskControl()
-    {
-        return taskControl;
-    }
-    
     public void cancel()
     {
-        if(taskControl != null)
-        {
-            taskControl.cancel();
-        }
+
     }
     
     public boolean isNeverOutdated()
     {
-        return taskControl == null;
+        return true;//taskControl == null;
     }
     
     public int getValue()

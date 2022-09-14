@@ -1,2 +1,7 @@
-package io.myosotisdev.utopianism.modules.team;public enum TeamClass {
+package io.myosotisdev.utopianism.modules.team;
+
+public enum TeamClass
+{
+    LEADER,
+    MEMBER
 }

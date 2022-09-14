@@ -1,4 +1,4 @@
-package me.rainbowmeowcat.befall.mathmatic;
+package io.myosotisdev.utopianism.util;
 
 public interface INumberTemplate<T extends Number>
 {

@@ -1,5 +1,5 @@
 package io.myosotisdev.utopianism.entity;
 
-public class BattleEntity
+public interface IBattleEntity
 {
 }

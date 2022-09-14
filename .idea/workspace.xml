@@ -1,32 +1,216 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="ArtifactsWorkspaceSettings">
+    <artifacts-to-build>
+      <artifact name="Utopianism:jar" />
+    </artifacts-to-build>
+  </component>
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="7db2d0c8-253c-4fc4-aa5d-082322ad6241" name="Changes" comment="" />
+    <list default="true" id="7db2d0c8-253c-4fc4-aa5d-082322ad6241" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/artifacts/Utopianism_jar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/artifacts/Utopianism_jar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/io/myosotisdev/utopianism/MainEntryPoint.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/io/myosotisdev/utopianism/MainEntryPoint.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/io/myosotisdev/utopianism/battle/Attributes.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/io/myosotisdev/utopianism/battle/Attributes.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/io/myosotisdev/utopianism/battle/BattleState.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/io/myosotisdev/utopianism/battle/BattleState.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/io/myosotisdev/utopianism/battle/DamageMeta.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/io/myosotisdev/utopianism/battle/DamageMeta.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/io/myosotisdev/utopianism/battle/DamageModifier.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/io/myosotisdev/utopianism/battle/DamageModifier.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/io/myosotisdev/utopianism/battle/DefenseModifier.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/io/myosotisdev/utopianism/battle/DefenseModifier.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/io/myosotisdev/utopianism/battle/ShieldMeta.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/io/myosotisdev/utopianism/battle/ShieldMeta.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/io/myosotisdev/utopianism/battle/attributes/Health.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/io/myosotisdev/utopianism/battle/attributes/Health.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/io/myosotisdev/utopianism/entity/EntityClassData.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/io/myosotisdev/utopianism/entity/IBattleEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/io/myosotisdev/utopianism/entity/IBattleEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/io/myosotisdev/utopianism/listeners/BlockEvents.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/io/myosotisdev/utopianism/listeners/BlockEvents.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/io/myosotisdev/utopianism/mgmt/ServerManagement.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/io/myosotisdev/utopianism/modules/Economy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/io/myosotisdev/utopianism/modules/Economy.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/io/myosotisdev/utopianism/modules/craft/ICraftingStation.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/io/myosotisdev/utopianism/modules/craft/IRecipe.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/io/myosotisdev/utopianism/modules/guild/Guild.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/io/myosotisdev/utopianism/modules/guild/Guild.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/io/myosotisdev/utopianism/modules/guild/GuildClass.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/io/myosotisdev/utopianism/modules/guild/GuildClass.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/io/myosotisdev/utopianism/modules/guild/IGuildMember.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/io/myosotisdev/utopianism/modules/guild/IGuildMember.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/io/myosotisdev/utopianism/modules/item/GemSocket.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/io/myosotisdev/utopianism/modules/item/GemSocket.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/io/myosotisdev/utopianism/modules/item/GemStone.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/io/myosotisdev/utopianism/modules/item/GemStone.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/io/myosotisdev/utopianism/modules/item/ItemEquipSlot.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/io/myosotisdev/utopianism/modules/item/ItemEquipSlot.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/io/myosotisdev/utopianism/modules/item/ItemTemplate.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/io/myosotisdev/utopianism/modules/item/ItemTemplate.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/io/myosotisdev/utopianism/modules/item/LoreTemplate.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/io/myosotisdev/utopianism/modules/item/LoreTemplate.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/io/myosotisdev/utopianism/modules/item/Quality.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/io/myosotisdev/utopianism/modules/item/Quality.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/io/myosotisdev/utopianism/modules/map/IRegionKeeper.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/io/myosotisdev/utopianism/modules/map/Region.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/io/myosotisdev/utopianism/modules/map/RegionPermission.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/io/myosotisdev/utopianism/modules/player/ImplPlayer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/io/myosotisdev/utopianism/modules/player/ImplPlayer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/io/myosotisdev/utopianism/modules/player/ImplPlayerProvider.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/io/myosotisdev/utopianism/modules/player/ImplPlayerProvider.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/io/myosotisdev/utopianism/modules/stat/ArrowParticles.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/io/myosotisdev/utopianism/modules/stat/ArrowParticles.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/io/myosotisdev/utopianism/modules/stat/ArrowVelocity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/io/myosotisdev/utopianism/modules/stat/ArrowVelocity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/io/myosotisdev/utopianism/modules/stat/AttackDamage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/io/myosotisdev/utopianism/modules/stat/AttackDamage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/io/myosotisdev/utopianism/modules/stat/AttackRange.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/io/myosotisdev/utopianism/modules/stat/AttackRange.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/io/myosotisdev/utopianism/modules/stat/AttackSpeed.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/io/myosotisdev/utopianism/modules/stat/AttackSpeed.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/io/myosotisdev/utopianism/modules/stat/BooleanStat.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/io/myosotisdev/utopianism/modules/stat/DoubleStat.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/io/myosotisdev/utopianism/modules/stat/EquipSlotStat.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/io/myosotisdev/utopianism/modules/stat/FactionDamage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/io/myosotisdev/utopianism/modules/stat/FactionDamage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/io/myosotisdev/utopianism/modules/stat/HealthRegeneration.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/io/myosotisdev/utopianism/modules/stat/HealthRegeneration.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/io/myosotisdev/utopianism/modules/stat/HoldingParticles.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/io/myosotisdev/utopianism/modules/stat/HoldingParticles.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/io/myosotisdev/utopianism/modules/stat/IntegerStat.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/io/myosotisdev/utopianism/modules/stat/ItemQuality.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/io/myosotisdev/utopianism/modules/stat/ItemQuality.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/io/myosotisdev/utopianism/modules/stat/ItemStat.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/io/myosotisdev/utopianism/modules/stat/ItemStat.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/io/myosotisdev/utopianism/modules/stat/ManaRegeneration.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/io/myosotisdev/utopianism/modules/stat/ManaRegeneration.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/io/myosotisdev/utopianism/modules/stat/MovementSpeed.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/io/myosotisdev/utopianism/modules/stat/MovementSpeed.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/io/myosotisdev/utopianism/modules/stat/RequiredLevel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/io/myosotisdev/utopianism/modules/stat/RequiredLevel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/io/myosotisdev/utopianism/modules/stat/StringStat.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/io/myosotisdev/utopianism/modules/stat/Unbreakable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/io/myosotisdev/utopianism/modules/stat/Unbreakable.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/io/myosotisdev/utopianism/modules/stat/data/DoubleStatData.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/io/myosotisdev/utopianism/modules/stat/data/ItemStatData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/io/myosotisdev/utopianism/modules/stat/data/ItemStatData.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/io/myosotisdev/utopianism/modules/task/ITaskExecutor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/io/myosotisdev/utopianism/modules/task/ITaskExecutor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/io/myosotisdev/utopianism/modules/task/TaskModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/io/myosotisdev/utopianism/modules/task/TaskModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/io/myosotisdev/utopianism/modules/team/ITeamMember.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/io/myosotisdev/utopianism/modules/team/ITeamMember.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/io/myosotisdev/utopianism/modules/team/Team.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/io/myosotisdev/utopianism/modules/team/Team.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/io/myosotisdev/utopianism/modules/team/TeamClass.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/io/myosotisdev/utopianism/modules/team/TeamClass.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/io/myosotisdev/utopianism/modules/warzone/Warzone.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/io/myosotisdev/utopianism/modules/warzone/WarzoneRecord.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/io/myosotisdev/utopianism/util/DoubleTemplate.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/io/myosotisdev/utopianism/util/DoubleTemplate.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/io/myosotisdev/utopianism/util/INumberTemplate.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/io/myosotisdev/utopianism/util/INumberTemplate.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/io/myosotisdev/utopianism/util/IntegerTemplate.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/io/myosotisdev/utopianism/util/IntegerTemplate.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/io/myosotisdev/utopianism/util/StringList.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/io/myosotisdev/utopianism/util/ValueDouble.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/io/myosotisdev/utopianism/util/ValueDouble.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/io/myosotisdev/utopianism/util/ValueInt.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/io/myosotisdev/utopianism/util/ValueInt.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="ExternalProjectsData">
+    <projectState path="$PROJECT_DIR$">
+      <ProjectState />
+    </projectState>
+  </component>
+  <component name="ExternalProjectsManager">
+    <system id="GRADLE">
+      <state>
+        <projects_view>
+          <tree_state>
+            <expand />
+            <select />
+          </tree_state>
+        </projects_view>
+      </state>
+    </system>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Enum" />
+        <option value="Interface" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="importingSettings">
+      <MavenImportingSettings>
+        <option name="jdkForImporter" value="corretto-17" />
+      </MavenImportingSettings>
+    </option>
+  </component>
+  <component name="MavenRunner">
+    <option name="jreName" value="corretto-17" />
+    <option name="vmOptions" value="-Xms2G -Xmx3G" />
+  </component>
   <component name="ProjectId" id="2ERHILsfG7z8zwOJic9Yzru2St3" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;F:/Source Codes/Java&amp;Kotlin/Utopianism/src/main/resources&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.37011495&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;
   }
-}]]></component>
+}</component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="F:\Source Codes\Java&amp;Kotlin\Utopianism\src\main\resources" />
+      <recent name="F:\Source Codes\Java&amp;Kotlin\Utopianism\src\main\java\io\myosotisdev\utopianism\util" />
+    </key>
+    <key name="ExtractSuperBase.RECENT_KEYS">
+      <recent name="io.myosotisdev.utopianism.modules.stat.data" />
+    </key>
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="io.myosotisdev.utopianism.battle" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="utopianism [clean,install...]" type="MavenRunConfiguration" factoryName="Maven" nameIsGenerated="true">
+      <MavenSettings>
+        <option name="myGeneralSettings" />
+        <option name="myRunnerSettings" />
+        <option name="myRunnerParameters">
+          <MavenRunnerParameters>
+            <option name="profiles">
+              <set />
+            </option>
+            <option name="goals">
+              <list>
+                <option value="clean" />
+                <option value="install" />
+                <option value="-Denvironment=$environment" />
+              </list>
+            </option>
+            <option name="pomFileName" />
+            <option name="profilesMap">
+              <map />
+            </option>
+            <option name="resolveToWorkspace" value="false" />
+            <option name="workingDirPath" value="$PROJECT_DIR$" />
+          </MavenRunnerParameters>
+        </option>
+      </MavenSettings>
+      <method v="2" />
+    </configuration>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
+      <changelist id="7db2d0c8-253c-4fc4-aa5d-082322ad6241" name="Changes" comment="" />
       <created>1662551400287</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1662551400287</updated>
     </task>
     <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
   </component>
 </project>

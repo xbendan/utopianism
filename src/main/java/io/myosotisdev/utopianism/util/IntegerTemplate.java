@@ -1,4 +1,4 @@
-package me.rainbowmeowcat.befall.mathmatic;
+package io.myosotisdev.utopianism.util;
 
 import java.math.BigDecimal;
 import java.util.HashMap;

@@ -1,2 +1,5 @@
-package io.myosotisdev.utopianism.modules.task;public class TaskModel {
+package io.myosotisdev.utopianism.modules.task;
+
+public class TaskModel
+{
 }

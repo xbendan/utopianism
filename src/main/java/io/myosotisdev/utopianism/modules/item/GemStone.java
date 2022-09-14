@@ -1,2 +1,5 @@
-package io.myosotisdev.utopianism.modules.item;public class GemStone {
+package io.myosotisdev.utopianism.modules.item;
+
+public class GemStone
+{
 }

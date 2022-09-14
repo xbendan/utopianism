@@ -3,45 +3,45 @@
     <output-path>$PROJECT_DIR$/out/artifacts/Utopianism_jar</output-path>
     <root id="archive" name="Utopianism.jar">
       <element id="module-output" name="Utopianism" />
-      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/com/google/errorprone/error_prone_annotations/2.11.0/error_prone_annotations-2.11.0.jar" path-in-jar="/" />
-      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/org/jctools/jctools-core/3.3.0/jctools-core-3.3.0.jar" path-in-jar="/" />
-      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/space/vectrix/flare/flare-fastutil/2.0.1/flare-fastutil-2.0.1.jar" path-in-jar="/" />
-      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/org/jetbrains/kotlin/kotlin-stdlib-jdk7/1.6.20/kotlin-stdlib-jdk7-1.6.20.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/net/kyori/adventure-api/4.11.0/adventure-api-4.11.0.jar" path-in-jar="/" />
       <element id="extracted-dir" path="$MAVEN_REPOSITORY$/org/tinylog/tinylog-api/2.4.1/tinylog-api-2.4.1.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/org/jline/jline-terminal-jansi/3.21.0/jline-terminal-jansi-3.21.0.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/net/kyori/examination-api/1.3.0/examination-api-1.3.0.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/com/github/Minestom/MinestomDataGenerator/1c1921cd41/MinestomDataGenerator-1c1921cd41.jar" path-in-jar="/" />
       <element id="extracted-dir" path="$MAVEN_REPOSITORY$/net/kyori/adventure-key/4.11.0/adventure-key-4.11.0.jar" path-in-jar="/" />
       <element id="extracted-dir" path="$MAVEN_REPOSITORY$/net/kyori/adventure-text-serializer-legacy/4.11.0/adventure-text-serializer-legacy-4.11.0.jar" path-in-jar="/" />
-      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/org/tinylog/tinylog-impl/2.4.1/tinylog-impl-2.4.1.jar" path-in-jar="/" />
-      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/org/jetbrains/kotlin/kotlin-reflect/1.6.20/kotlin-reflect-1.6.20.jar" path-in-jar="/" />
-      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/org/jline/jline/3.21.0/jline-3.21.0.jar" path-in-jar="/" />
-      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/com/github/Minestom/Minestom/fc90fe8852/Minestom-fc90fe8852.jar" path-in-jar="/" />
-      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/org/jetbrains/kotlin/kotlin-stdlib-jdk8/1.6.20/kotlin-stdlib-jdk8-1.6.20.jar" path-in-jar="/" />
-      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/org/antlr/antlr4-runtime/4.10.1/antlr4-runtime-4.10.1.jar" path-in-jar="/" />
-      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/org/codehaus/mojo/animal-sniffer-annotations/1.18/animal-sniffer-annotations-1.18.jar" path-in-jar="/" />
-      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/com/google/code/gson/gson/2.9.0/gson-2.9.0.jar" path-in-jar="/" />
-      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/net/kyori/adventure-text-serializer-plain/4.11.0/adventure-text-serializer-plain-4.11.0.jar" path-in-jar="/" />
-      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/org/jline/jline-terminal/3.21.0/jline-terminal-3.21.0.jar" path-in-jar="/" />
-      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/net/kyori/examination-string/1.3.0/examination-string-1.3.0.jar" path-in-jar="/" />
-      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/org/jetbrains/kotlin/kotlin-stdlib-common/1.6.20/kotlin-stdlib-common-1.6.20.jar" path-in-jar="/" />
-      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/net/kyori/adventure-api/4.11.0/adventure-api-4.11.0.jar" path-in-jar="/" />
-      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/net/kyori/examination-api/1.3.0/examination-api-1.3.0.jar" path-in-jar="/" />
-      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/org/jline/jline-terminal-jansi/3.21.0/jline-terminal-jansi-3.21.0.jar" path-in-jar="/" />
-      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/io/github/jglrxavpok/hephaistos/antlr/2.5.0/antlr-2.5.0.jar" path-in-jar="/" />
-      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/org/jetbrains/annotations/23.0.0/annotations-23.0.0.jar" path-in-jar="/" />
-      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/it/unimi/dsi/fastutil/8.5.8/fastutil-8.5.8.jar" path-in-jar="/" />
-      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/space/vectrix/flare/flare/2.0.1/flare-2.0.1.jar" path-in-jar="/" />
-      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/org/tinylog/slf4j-tinylog/2.4.1/slf4j-tinylog-2.4.1.jar" path-in-jar="/" />
-      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/org/slf4j/slf4j-api/2.0.0-alpha5/slf4j-api-2.0.0-alpha5.jar" path-in-jar="/" />
-      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/com/github/Minestom/DependencyGetter/v1.0.1/DependencyGetter-v1.0.1.jar" path-in-jar="/" />
-      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/net/kyori/adventure-text-serializer-gson/4.11.0/adventure-text-serializer-gson-4.11.0.jar" path-in-jar="/" />
-      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/org/jetbrains/kotlin/kotlin-stdlib/1.6.20/kotlin-stdlib-1.6.20.jar" path-in-jar="/" />
-      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/org/fusesource/jansi/jansi/2.4.0/jansi-2.4.0.jar" path-in-jar="/" />
-      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/com/github/Minestom/MinestomDataGenerator/1c1921cd41/MinestomDataGenerator-1c1921cd41.jar" path-in-jar="/" />
-      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/commons-net/commons-net/3.6/commons-net-3.6.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/org/jetbrains/kotlin/kotlin-stdlib-jdk7/1.6.20/kotlin-stdlib-jdk7-1.6.20.jar" path-in-jar="/" />
       <element id="extracted-dir" path="$MAVEN_REPOSITORY$/io/github/jglrxavpok/hephaistos/gson/2.5.0/gson-2.5.0.jar" path-in-jar="/" />
       <element id="extracted-dir" path="$MAVEN_REPOSITORY$/io/github/jglrxavpok/hephaistos/common/2.5.0/common-2.5.0.jar" path-in-jar="/" />
-      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/com/github/ben-manes/caffeine/caffeine/3.0.6/caffeine-3.0.6.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/org/jline/jline-terminal/3.21.0/jline-terminal-3.21.0.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/com/google/errorprone/error_prone_annotations/2.11.0/error_prone_annotations-2.11.0.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/org/tinylog/slf4j-tinylog/2.4.1/slf4j-tinylog-2.4.1.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/it/unimi/dsi/fastutil/8.5.8/fastutil-8.5.8.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/org/jetbrains/kotlin/kotlin-stdlib-jdk8/1.6.20/kotlin-stdlib-jdk8-1.6.20.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/net/kyori/adventure-text-serializer-gson/4.11.0/adventure-text-serializer-gson-4.11.0.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/org/codehaus/mojo/animal-sniffer-annotations/1.18/animal-sniffer-annotations-1.18.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/space/vectrix/flare/flare/2.0.1/flare-2.0.1.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/org/fusesource/jansi/jansi/2.4.0/jansi-2.4.0.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/org/jetbrains/kotlin/kotlin-reflect/1.6.20/kotlin-reflect-1.6.20.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/org/jline/jline/3.21.0/jline-3.21.0.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/io/github/jglrxavpok/hephaistos/antlr/2.5.0/antlr-2.5.0.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/net/kyori/examination-string/1.3.0/examination-string-1.3.0.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/org/jetbrains/kotlin/kotlin-stdlib/1.6.20/kotlin-stdlib-1.6.20.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/org/slf4j/slf4j-api/2.0.0-alpha5/slf4j-api-2.0.0-alpha5.jar" path-in-jar="/" />
       <element id="extracted-dir" path="$MAVEN_REPOSITORY$/com/extollit/data-structures/2.18/data-structures-2.18.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/org/antlr/antlr4-runtime/4.10.1/antlr4-runtime-4.10.1.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/org/jctools/jctools-core/3.3.0/jctools-core-3.3.0.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/org/jetbrains/kotlin/kotlin-stdlib-common/1.6.20/kotlin-stdlib-common-1.6.20.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/org/tinylog/tinylog-impl/2.4.1/tinylog-impl-2.4.1.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/com/google/code/gson/gson/2.9.0/gson-2.9.0.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/com/github/Minestom/Minestom/fc90fe8852/Minestom-fc90fe8852.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/commons-net/commons-net/3.6/commons-net-3.6.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/org/jetbrains/annotations/23.0.0/annotations-23.0.0.jar" path-in-jar="/" />
       <element id="extracted-dir" path="$MAVEN_REPOSITORY$/com/github/MadMartian/hydrazine-path-finding/1.7.2/hydrazine-path-finding-1.7.2.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/com/github/Minestom/DependencyGetter/v1.0.1/DependencyGetter-v1.0.1.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/net/kyori/adventure-text-serializer-plain/4.11.0/adventure-text-serializer-plain-4.11.0.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/com/github/ben-manes/caffeine/caffeine/3.0.6/caffeine-3.0.6.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/space/vectrix/flare/flare-fastutil/2.0.1/flare-fastutil-2.0.1.jar" path-in-jar="/" />
     </root>
   </artifact>
 </component>

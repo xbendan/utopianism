@@ -1,2 +1,6 @@
-package io.myosotisdev.utopianism.modules.team;public class ITeamMember {
+package io.myosotisdev.utopianism.modules.team;
+
+public interface ITeamMember
+{
+    
 }

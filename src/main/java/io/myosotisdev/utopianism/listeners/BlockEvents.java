@@ -1,2 +1,9 @@
-package io.myosotisdev.utopianism.listeners;public class BlockEvents {
+package io.myosotisdev.utopianism.listeners;
+
+public class BlockEvents
+{
+    public BlockEvents()
+    {
+
+    }
 }

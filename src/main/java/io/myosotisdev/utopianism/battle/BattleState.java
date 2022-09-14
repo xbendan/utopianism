@@ -1,2 +1,9 @@
-package io.myosotisdev.utopianism.battle.attributes;public enum BattleState {
+package io.myosotisdev.utopianism.battle;
+
+public enum BattleState
+{
+    COMBAT,
+    FREE,
+    BUILDING,
+    EXPLORING;
 }
