@@ -2,29 +2,29 @@ package io.myosotisdev.utopianism.modules;
 
 public class Economy
 {
-    private int money;
+    private double money;
 
     public Economy()
     {
         this.money = 0;
     }
 
-    public Economy(int money)
+    public Economy(double money)
     {
         this.money = money;
     }
 
-    public void giveMoney(int amount)
+    public void giveMoney(double amount)
     {
         this.money += amount;
     }
 
-    public void setMoney(int amount)
+    public void setMoney(double amount)
     {
         this.money = amount;
     }
 
-    public boolean takeMoney(int amount)
+    public boolean takeMoney(double amount)
     {
         if(this.money < amount)
         {
@@ -35,17 +35,17 @@ public class Economy
         return true;
     }
 
-    public int getMoney()
+    public double getMoney()
     {
         return this.money;
     }
 
-    public void deposit(int amount)
+    public void deposit(double amount)
     {
         this.money += amount;
     }
 
-    public boolean withdraw(int amount)
+    public boolean withdraw(double amount)
     {
         if(amount > this.money)
         {
