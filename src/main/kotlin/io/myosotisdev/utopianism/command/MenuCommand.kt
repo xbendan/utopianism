@@ -25,8 +25,5 @@ class MenuCommand : AbstractCommand(null, Name, *Aliases)
         })
     }
 
-    override fun permission(): Permission?
-    {
-        return Permission.ofString(Namespaces.Utopianism, "player.menu")
-    }
+    override fun permission(): Permission = Permission.ofString(Namespaces.Utopianism, "player.menu")
 }

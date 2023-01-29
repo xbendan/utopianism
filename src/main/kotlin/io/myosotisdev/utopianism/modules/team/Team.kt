@@ -8,7 +8,6 @@ import io.myosotisdev.utopianism.util.Tags
 import net.kyori.adventure.text.Component
 import net.minestom.server.entity.Player
 import java.util.*
-import kotlin.collections.HashSet
 
 class Team(val uuid: UUID, player: Player, val inviteCode: Int) : ITaskExecutor
 {

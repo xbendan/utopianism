@@ -20,9 +20,6 @@ class BattleManager : ModuleManager("battle")
 
     override fun onEnable()
     {
-        addListener(AsyncPlayerPreLoginEvent::class.java, Consumer {
-            it.player.setTag(StateTag, BattleState.NORMAL)
-        })
     }
 
     override fun onDisable()

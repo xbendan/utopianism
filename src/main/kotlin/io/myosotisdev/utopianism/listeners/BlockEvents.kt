@@ -25,10 +25,10 @@ class BlockEvents
 
     init
     {
-        var blocksFile: File = File("modules/blocks.json")
+        val blocksFile: File = File("modules/blocks.json")
         if (blocksFile.exists())
         {
-            var json: JsonObject = JsonParser.parseReader(FileReader(blocksFile)).asJsonObject
+            val json: JsonObject = JsonParser.parseReader(FileReader(blocksFile)).asJsonObject
             json.entrySet()
                     .forEach { entry ->
                         val material: Material = Material.fromNamespaceId(entry.key) ?: Material.AIR
@@ -44,39 +44,7 @@ class BlockEvents
 
         Minestom.registerListener(PlayerBlockBreakEvent::class.java) { event ->
             val player = event.player
-            when(player.getTag(BattleManager.StateTag)!!)
-            {
-                /**
-                 *
-                 */
-                BattleState.COMBAT ->
-                {
-
-                }
-                /**
-                 * 检查模板
-                 */
-                BattleState.HOMELAND ->
-                {
-
-                }
-                /**
-                 * 检查区域 region 是否允许挖掘
-                 * 处理挖掘掉落
-                 */
-                BattleState.NORMAL   ->
-                {
-
-                }
-                BattleState.BUILDING ->
-                {
-
-                }
-                BattleState.EXPLORING ->
-                {
-
-                }
-            }
+            player.getTag(BattleManager.StateTag)!!.blockBreakEvent.accept(event)
         }
     }
 }
