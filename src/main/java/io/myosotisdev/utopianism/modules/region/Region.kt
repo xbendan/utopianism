@@ -11,7 +11,6 @@ class Region protected constructor(val uid: UUID)
     var name: String? = null
     var respawnPoint: Pos? = null
     var owner: IRegionKeeper? = null
-        private set
     private val defaultPermissions: Map<RegionPermission, Boolean> = HashMap()
 
     constructor(AA: Pos?, BB: Pos?, uid: UUID, name: String?, owner: IRegionKeeper?) : this(uid)
@@ -19,11 +18,6 @@ class Region protected constructor(val uid: UUID)
         cornerAA = AA
         cornerBB = BB
         this.name = name
-        this.owner = owner
-    }
-
-    fun setowner(owner: IRegionKeeper?)
-    {
         this.owner = owner
     }
 
@@ -35,4 +29,14 @@ class Region protected constructor(val uid: UUID)
     fun setPermByDefault(rp: RegionPermission?, `val`: Boolean)
     {
     }
+
+    companion object
+    {
+        private fun loadToChunks(region: Region, reg: Boolean)
+        {
+
+        }
+    }
+
+
 }

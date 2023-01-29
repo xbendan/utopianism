@@ -2,8 +2,10 @@ package io.myosotisdev.minestom
 
 import com.google.gson.JsonObject
 import com.google.gson.JsonParser
-import io.myosotisdev.minestom.module.Module
+import io.myosotisdev.minestom.module.BanPlayersModule
+import io.myosotisdev.minestom.module.ModuleManager
 import io.myosotisdev.minestom.module.PermissionModule
+import io.myosotisdev.minestom.module.WorldInstanceModule
 import io.myosotisdev.minestom.permission.IPermissionHandler
 import io.myosotisdev.minestom.permission.Permission
 import net.kyori.adventure.text.Component
@@ -18,6 +20,8 @@ import net.minestom.server.entity.Player
 import net.minestom.server.entity.fakeplayer.FakePlayer
 import net.minestom.server.event.Event
 import net.minestom.server.event.EventListener
+import net.minestom.server.extras.MojangAuth
+import net.minestom.server.instance.Instance
 import net.minestom.server.network.ConnectionManager
 import net.minestom.server.timer.ExecutionType
 import net.minestom.server.timer.SchedulerManager
@@ -32,22 +36,22 @@ import java.util.function.Consumer
 
 object Minestom
 {
-    private val Modules: MutableMap<String, Module?> = HashMap()
+    private val Modules: MutableMap<String, ModuleManager?> = HashMap()
     private var Server: MinecraftServer? = null
     private var ServerProperties: JsonObject? = null
-    fun getModule(name: String): Module?
+    fun getModule(name: String): ModuleManager?
     {
         return Modules[name]
     }
 
-    fun registerModule(module: Module): Boolean
+    fun registerModule(module: ModuleManager): Boolean
     {
         val result = Modules.putIfAbsent(module.name, module) == null
         if (result && MinecraftServer.isStarted()) module.onEnable()
         return result
     }
 
-    fun registerModules(vararg modules: Module)
+    fun registerModules(vararg modules: ModuleManager)
     {
         for (mod in modules) registerModule(mod)
     }
@@ -62,12 +66,12 @@ object Minestom
         Modules.clear()
     }
 
-    fun overrideModule(module: Module)
+    fun overrideModule(module: ModuleManager)
     {
         Modules[module.name] = module
     }
 
-    fun modules(): Collection<Module?>
+    fun modules(): Collection<ModuleManager?>
     {
         return Modules.values
     }
@@ -90,12 +94,14 @@ object Minestom
 
     fun getPlayer(name: String): Player?
     {
-        return connectionManager.getPlayer(name)
+        // convert to uuid
+        return getPlayer(UUID.nameUUIDFromBytes(name.toByteArray()))
     }
 
     fun getPlayer(uuid: UUID): Player?
     {
-        return connectionManager.getPlayer(uuid)
+        var player: Player? = connectionManager.getPlayer(uuid)
+        return player
     }
 
     fun getOnlinePlayers(): Collection<Player>
@@ -120,19 +126,29 @@ object Minestom
     val scheduler: SchedulerManager
         get() = MinecraftServer.getSchedulerManager()
 
-    fun scheduleTask(runnable: Runnable?, delay: Int, repeat: Int): Task
+    fun scheduleTask(runnable: Runnable, delay: Int, repeat: Int, type: ExecutionType = ExecutionType.SYNC): Task
     {
-        return scheduleTask(runnable, TaskSchedule.tick(delay), TaskSchedule.tick(repeat), ExecutionType.SYNC)
+        return scheduleTask(
+                runnable,
+                if (delay > 0) TaskSchedule.tick(delay) else TaskSchedule.stop(),
+                if (repeat > 0) TaskSchedule.tick(repeat) else TaskSchedule.stop(),
+                type
+        )
     }
 
-    fun scheduleTaskAsync(runnable: Runnable?, delay: Int, repeat: Int): Task
+    fun scheduleTaskAsync(runnable: Runnable, delay: Int, repeat: Int): Task
     {
-        return scheduleTask(runnable, TaskSchedule.tick(delay), TaskSchedule.tick(repeat), ExecutionType.ASYNC)
+        return scheduleTask(runnable, delay, repeat, type = ExecutionType.ASYNC)
     }
 
-    fun scheduleTask(runnable: Runnable?, delay: TaskSchedule?, repeat: TaskSchedule?, type: ExecutionType?): Task
+    fun scheduleTask(runnable: Runnable, delay: TaskSchedule, repeat: TaskSchedule, type: ExecutionType): Task
     {
-        return scheduler.scheduleTask(runnable!!, delay!!, repeat!!, type!!)
+        return scheduler.scheduleTask(runnable, delay, repeat, type)
+    }
+
+    fun runTaskAsync(runnable: Runnable): Task
+    {
+        return scheduler.scheduleTask(runnable, TaskSchedule.tick(0), TaskSchedule.tick(0), ExecutionType.ASYNC)
     }
 
     fun isOp(sender: CommandSender?): Boolean
@@ -160,13 +176,43 @@ object Minestom
     @JvmStatic
     fun checkPermission(sender: CommandSender, permission: Permission?): Boolean
     {
-        return sender is ConsoleSender || isOp(sender) || sender.hasPermission(permission!!) || sender is FakePlayer
+        return Objects.isNull(permission) || sender is ConsoleSender || isOp(sender) || sender.hasPermission(permission!!) || sender is FakePlayer
     }
 
     fun broadcast(component: Component?)
     {
         Audiences.all()
                 .sendMessage(component!!)
+    }
+
+    fun world(): WorldInstanceModule
+    {
+        return getModule("world-instance") as WorldInstanceModule
+    }
+
+    fun createTempWorld(name: String): Instance
+    {
+        return world().createTempWorld()
+    }
+
+    fun createWorld(name: String): Instance
+    {
+        return world().createWorld(name)
+    }
+
+    fun createWorld(name: String, file: File?): Instance
+    {
+        return world().createWorld(name, file)
+    }
+
+    fun loadWorld(file: File): Instance?
+    {
+        return world().loadWorld(file)
+    }
+
+    fun unloadWorld(name: String)
+    {
+        world().unloadWorld(name)
     }
 
     fun properties(): JsonObject?
@@ -184,8 +230,7 @@ object Minestom
                     while (`in`.read(fileBytes) != -1) out.write(fileBytes)
                     out.flush()
                 }
-                ServerProperties = JsonParser.parseReader(FileReader(file))
-                        .asJsonObject
+                ServerProperties = JsonParser.parseReader(FileReader(file)).asJsonObject
             }
             catch (e: IOException)
             {
@@ -195,23 +240,27 @@ object Minestom
         return ServerProperties
     }
 
+    fun getBannedPlayers(): Set<BanPlayersModule.BanRecord> = (getModule("ban") as BanPlayersModule).bannedPlayers
+
     fun start(): MinecraftServer?
     {
-        val addressObject = ServerProperties!!["address"]
-                .asJsonObject
-        return start(addressObject["ip"]
-                .asString, addressObject["port"]
-                .asInt)
+        val addressObject = ServerProperties!!["address"].asJsonObject
+        return start(addressObject["ip"].asString, addressObject["port"].asInt)
     }
 
     fun start(hostIP: String?, port: Int): MinecraftServer?
     {
         if (Server != null && MinecraftServer.isStarted()) return Server
-        MinecraftServer.init()
-                .also { Server = it }
-                .start(hostIP!!, port)
+
+        MinecraftServer.updateProcess()
+        MojangAuth.init()
+        Server = MinecraftServer().also { server -> server.start(hostIP!!, port) }
+        //MinecraftServer.init()
+        //        .also { Server = it }
+        //        .start(hostIP!!, port)
+
         modules().stream()
-                .forEach { module: Module? -> module!!.onEnable() }
+                .forEach { module: ModuleManager? -> module!!.onEnable() }
         return Server
     }
 

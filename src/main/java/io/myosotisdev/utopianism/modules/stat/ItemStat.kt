@@ -1,5 +1,6 @@
 package io.myosotisdev.utopianism.modules.stat
 
+import com.google.gson.JsonObject
 import io.myosotisdev.utopianism.modules.stat.data.ItemStatData
 import io.myosotisdev.utopianism.modules.stat.type.BooleanStat
 import io.myosotisdev.utopianism.modules.stat.type.DoubleStat
@@ -11,6 +12,8 @@ import net.minestom.server.tag.Tag
 abstract class ItemStat<T>(val key: String, val tag: Tag<T>)
 {
 
+    init { stats[key] = this }
+
     /**
      * This function is called when generating new item stack
      * and it should apply attributes into the item
@@ -18,8 +21,15 @@ abstract class ItemStat<T>(val key: String, val tag: Tag<T>)
      * @param itemStack
      * @param data
      */
-    abstract fun onApply(itemStack: ItemStack, data: ItemStatData<in T>)
+    open fun onApply(itemStack: ItemStack, data: ItemStatData<out T>)
+    {
+        itemStack.withTag(tag, data.value)
+    }
+
     abstract fun defaultStatData(): ItemStatData<T>?
+
+    abstract fun createStatData(jsonObject: JsonObject): ItemStatData<T>
+
     open fun getLoadedData(itemStack: ItemStack): T
     {
         return itemStack.getTag(tag)
@@ -27,7 +37,8 @@ abstract class ItemStat<T>(val key: String, val tag: Tag<T>)
 
     companion object
     {
-        @JvmField
+        private val stats: HashMap<String, ItemStat<*>> = HashMap()
+
         val ITEM_ID: ItemStat<*> = StringStat("id")
         val ITEM_SLOT: ItemStat<*> = EquipSlot()
         val DISABLE_INTERACTION: ItemStat<*> = BooleanStat("disable-interaction")
@@ -52,7 +63,6 @@ abstract class ItemStat<T>(val key: String, val tag: Tag<T>)
         val DAMAGE_RESIST_RATE: ItemStat<*> = DoubleStat("damage-resist-%")
         val MAGIC_RESIST: ItemStat<*> = DoubleStat("magic-resist")
         val MAGIC_RESIST_RATE: ItemStat<*> = DoubleStat("magic-resist-%")
-        @JvmField
         val UNBREAKABLE: ItemStat<*> = Unbreakable()
         val FACTION_DAMAGE: ItemStat<*> = FactionDamage()
         val KNOCKBACK: ItemStat<*> = DoubleStat("knockback")
@@ -60,7 +70,8 @@ abstract class ItemStat<T>(val key: String, val tag: Tag<T>)
         val TWO_HANDED: ItemStat<*> = BooleanStat("two-handed")
         val SOULBOUND: ItemStat<*> = BooleanStat("soulbound")
         val SOULBOUND_CHANCE: ItemStat<*> = DoubleStat("soulbound-chance")
-        @JvmField
         val REINFORCE: ItemStat<*> = IntegerStat("reinforce")
+
+        fun getByName(key: String): ItemStat<*>? = stats[key]
     }
 }

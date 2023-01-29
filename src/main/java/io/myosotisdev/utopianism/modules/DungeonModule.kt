@@ -1,10 +1,14 @@
 package io.myosotisdev.utopianism.modules
 
-import io.myosotisdev.minestom.module.Module
-import io.myosotisdev.utopianism.Ut
+import io.myosotisdev.minestom.module.ModuleManager
 
-class DungeonModule : Module(Ut.ModuleDungeon)
+class DungeonModule : ModuleManager(Name)
 {
+    companion object
+    {
+        val Name: String = "dungeon"
+    }
+
     override fun onEnable()
     {
     }

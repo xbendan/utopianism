@@ -3,7 +3,6 @@ package io.myosotisdev.minestom.command.admin
 import io.myosotisdev.minestom.command.AbstractCommand
 import io.myosotisdev.minestom.permission.Permission
 import io.myosotisdev.minestom.permission.Permission.Companion.ofString
-import io.myosotisdev.minestom.util.command.Commands.withPerm
 import io.myosotisdev.utopianism.util.Namespaces
 import net.kyori.adventure.text.Component
 import net.kyori.adventure.text.format.NamedTextColor
@@ -35,7 +34,7 @@ class BackpackCommand(command: AbstractCommand?) : AbstractCommand(command, Name
 
         init
         {
-            addConditionalSyntax(withPerm(permission()), { sender: CommandSender, context: CommandContext ->
+            addSyntax({ sender: CommandSender, context: CommandContext ->
                 val player = context.get(arg0_player)
                         .findFirstPlayer(sender)
                 if (player != null)
@@ -43,7 +42,7 @@ class BackpackCommand(command: AbstractCommand?) : AbstractCommand(command, Name
                     val viewInventory = Inventory(InventoryType.CHEST_4_ROW, player.name)
                     val originInventory = player.inventory
                     for (slotId in 0..35) viewInventory.setItemStack(slotId, originInventory.getItemStack(slotId))
-                    viewInventory.setTag(Tag.Boolean("inventory_clickable"), false)
+                    viewInventory.setTag(Tag.Boolean("inventory_locked"), true)
                     player.openInventory(viewInventory)
                 }
                 else sender.sendMessage(Component.text("Player does not exist!", NamedTextColor.RED))

@@ -8,6 +8,6 @@ class FactionDamageData(override var value: FactionDamage) : ItemStatData<Factio
 {
     companion object
     {
-        val Serializer: Serializer<FactionDamage?> = FactionDamageTagSerializer()
+        val Serializer: Serializer<FactionDamage> = FactionDamageTagSerializer()
     }
 }

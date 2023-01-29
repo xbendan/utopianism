@@ -4,7 +4,7 @@ import net.kyori.adventure.text.Component
 
 class LoreTemplate
 {
-    fun createLores(fromTemplate: ItemTemplate?): List<Component>
+    fun createLores(fromTemplate: ItemStackTemplate?): List<Component>
     {
         return ArrayList()
     }

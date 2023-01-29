@@ -1,7 +1,6 @@
 package io.myosotisdev.utopianism.modules.craft
 
 import io.myosotisdev.minestom.Minestom
-import io.myosotisdev.utopianism.Ut
 import io.myosotisdev.utopianism.util.SingleSelectionModel
 import net.minestom.server.Viewable
 import net.minestom.server.coordinate.Pos
@@ -29,8 +28,7 @@ abstract class CraftingStation(
 
     constructor(key: String, shared: Boolean, pos: Pos, recipesKey: String?) : this(key, shared, pos)
     {
-        acceptedRecipes.addAll(Ut.crafting()
-                .getRecipes(recipesKey))
+        acceptedRecipes.addAll(Crafts.getRecipes(recipesKey))
     }
 
     fun getAcceptedRecipes(): Set<Recipe>
@@ -54,7 +52,7 @@ abstract class CraftingStation(
         viewingPlayers.add(player)
         if (!isShared)
         {
-            workersModel.add(player, createWorker(player))
+            workersModel[player] = createWorker(player)
         }
         return false
     }

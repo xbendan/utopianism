@@ -1,23 +1,16 @@
 package io.myosotisdev.minestom.module
 
-import com.google.common.base.Strings
 import com.google.common.collect.Maps
 import com.google.gson.JsonObject
 import com.google.gson.JsonParser
-import it.unimi.dsi.fastutil.Hash
-import net.kyori.adventure.text.Component
-import net.kyori.adventure.text.format.TextColor
-import net.kyori.adventure.text.serializer.gson.GsonComponentSerializer
 import net.minestom.server.entity.Player
 import net.minestom.server.utils.NamespaceID
 import java.io.File
 import java.io.FileReader
 import java.io.IOException
 import java.util.*
-import java.util.logging.Level
-import kotlin.collections.HashSet
 
-class LocaleModule : Module("locale")
+class LocaleModule : ModuleManager("locale")
 {
     var defaultLocale: Locale = Locale.getDefault()
     private val Empty = "NO-MATCHED-STRING"
@@ -33,7 +26,7 @@ class LocaleModule : Module("locale")
         }
         componentTransMap = localeTranslationMaps[defaultLocale]
         return componentTransMap?.getOrDefault(namespace, "Invalid key [$namespace]")
-               ?: throw NoSuchElementException("The default locale has no such translation map.")
+               ?: Empty
     }
 
     fun translate(player: Player, namespace: NamespaceID): String
@@ -68,12 +61,8 @@ class LocaleModule : Module("locale")
             {
                 val newObject = value
                         .asJsonObject
-                if (Strings.isNullOrEmpty(domain)) parse(locale, key, path, newObject)
-                else
-                {
-                    val newPath = "$path.$key"
-                    parse(locale, domain, newPath, newObject)
-                }
+                val newPath = "$path.$key"
+                parse(locale, domain, newPath, newObject)
             }
             else components?.putIfAbsent(NamespaceID.from(domain!!, path), value
                     .asString)
@@ -82,8 +71,6 @@ class LocaleModule : Module("locale")
 
     override fun onEnable()
     {
-        logger.log(Level.INFO, GsonComponentSerializer.gson()
-                .serialize(Component.text("Test message", TextColor.color(30, 144, 255))))
         val supportedLocales = Arrays.asList(*Locale.getAvailableLocales())
         val localeFiles = dataFolder.listFiles { dir: File?, name: String ->
             name.endsWith(".json") &&
@@ -93,6 +80,7 @@ class LocaleModule : Module("locale")
                                 .equals(name.replace(".json", ""), ignoreCase = true)
                     }
         }
+
         try
         {
             for (localeFile in localeFiles) parse(Locale.forLanguageTag(localeFile.name

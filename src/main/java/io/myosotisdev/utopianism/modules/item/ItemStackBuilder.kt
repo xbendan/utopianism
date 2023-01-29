@@ -1,12 +1,11 @@
 package io.myosotisdev.utopianism.modules.item
 
-import io.myosotisdev.utopianism.modules.stat.ItemStat
 import io.myosotisdev.utopianism.modules.stat.data.ItemStatData
 import net.kyori.adventure.text.Component
 import net.minestom.server.item.ItemMeta
 import net.minestom.server.item.ItemStack
 
-class ItemStackBuilder(private val template: ItemTemplate)
+class ItemStackBuilder(private val template: ItemStackTemplate)
 {
     fun createItemStacks(amount: Int): ItemStack
     {
@@ -17,16 +16,15 @@ class ItemStackBuilder(private val template: ItemTemplate)
                         ?.createLores(template) ?: ArrayList())
                 .build()
                 .withMeta { builder: ItemMeta.Builder ->
-                    builder.customModelData(template.customModelId)
+                    builder.customModelData(template.customModelData)
                             .unbreakable(template.isUnbreakable)
                             .damage(template.durability)
                             .build()
                 }
         // Need Update
-        template.itemStats
-                .forEach { (itemStat: ItemStat<*>, itemStatData: ItemStatData<*>): Map.Entry<ItemStat<*>, ItemStatData<*>> ->
-                    itemStat.onApply(newStack, itemStatData as ItemStatData<Any?>)
-                }
+        template.itemStats.entries.forEach {
+            it.key.onApply(newStack, it.value as ItemStatData<Nothing>)
+        }
         return newStack
     }
 }

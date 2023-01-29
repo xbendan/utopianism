@@ -7,7 +7,7 @@ import net.minestom.server.tag.TagReadable
 object Tags
 {
     @JvmStatic
-    fun createTag(key: String, serializer: Serializer<*>): Tag<*>
+    fun <T> createTag(key: String, serializer: Serializer<T>): Tag<T>
     {
         return Tag.Structure(key, serializer.createTagSerializer(key))
     }

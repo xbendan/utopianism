@@ -6,9 +6,4 @@ import net.minestom.server.item.ItemStack
 
 class ArrowVelocity : DoubleStat("arrow-velocity")
 {
-    override fun onApply(itemStack: ItemStack, data: ItemStatData<in Double>)
-    {
-        TODO("Not yet implemented")
-    }
-
 }

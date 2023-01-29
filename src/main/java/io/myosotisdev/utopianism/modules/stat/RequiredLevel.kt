@@ -6,8 +6,5 @@ import net.minestom.server.item.ItemStack
 
 class RequiredLevel : IntegerStat("required-level")
 {
-    override fun onApply(itemStack: ItemStack, data: ItemStatData<in Int>)
-    {
-        super.onApply(itemStack, data)
-    }
+
 }

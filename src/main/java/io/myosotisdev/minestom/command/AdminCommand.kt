@@ -5,7 +5,7 @@ import io.myosotisdev.minestom.permission.Permission
 import io.myosotisdev.minestom.permission.Permission.Companion.ofString
 import io.myosotisdev.utopianism.util.Namespaces
 
-class AdminCommand : AbstractCommand(null, Name, *Aliases)
+open class AdminCommand : AbstractCommand(null, Name, *Aliases)
 {
     companion object
     {

@@ -16,7 +16,7 @@ object Locales
 
     fun translate(locale: Locale?, string: String): String
     {
-        return translate(locale, NamespaceID.from(string!!))
+        return translate(locale, NamespaceID.from(string))
     }
 
     fun translate(player: Player?, namespace: NamespaceID): String

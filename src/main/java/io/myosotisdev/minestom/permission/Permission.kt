@@ -1,6 +1,6 @@
 package io.myosotisdev.minestom.permission
 
-import io.myosotisdev.minestom.entity.PlayerEx
+import io.myosotisdev.minestom.entity.MinestomPlayer
 import net.minestom.server.entity.Player
 import net.minestom.server.utils.NamespaceID
 
@@ -20,13 +20,34 @@ import net.minestom.server.utils.NamespaceID
  * - Does permission group where sender at has matched permission?
  * - Does permission handler has matched permission?
  */
-class Permission protected constructor(private val full: String, private val domain: String, vararg nodes: String) : net.minestom.server.permission.Permission(full)
+class Permission : net.minestom.server.permission.Permission
 {
-    private var nodes: Array<String>
+    val full: String
+    val domain: String
+    val nodes: Array<String>
 
-    init
+    constructor(domain: String, path: String) : this("${domain}:${path}")
+
+    constructor(full: String) : super(full)
     {
-        this.nodes = arrayOf(*nodes)
+        this.full = full
+        val colonIndex = full.indexOf(58.toChar())
+        assert(colonIndex > 0 && !full.endsWith(":"))
+
+        val domain = full.substring(0, colonIndex)
+        val nodepath = full.substring(colonIndex + 1)
+        if (domain.matches(LegalDomainLetters) && nodepath.matches(LegalPathLetters))
+        {
+            this.domain = domain
+            this.nodes = nodepath.split(".".toRegex())
+                    .dropLastWhile { it.isEmpty() }
+                    .toTypedArray()
+        }
+        else
+        {
+            this.domain = "empty"
+            this.nodes = arrayOf()
+        }
     }
 
     fun matchWith(perm: Permission): Boolean
@@ -76,12 +97,12 @@ class Permission protected constructor(private val full: String, private val dom
 
     fun Player.removePerm(permission: Permission?)
     {
-        (this as PlayerEx).removePerm(permission)
+        (this as MinestomPlayer).removePerm(permission)
     }
 
     fun Player.addPerm(permission: Permission?)
     {
-        (this as PlayerEx).addPerm(permission)
+        (this as MinestomPlayer).addPerm(permission)
     }
 
     companion object
@@ -89,27 +110,12 @@ class Permission protected constructor(private val full: String, private val dom
         private val LegalDomainLetters: Regex = Regex("[0123456789abcdefghijklmnopqrstuvwxyz-]+")
         private val LegalPathLetters: Regex = Regex("[0123456789abcdefghijklmnopqrstuvwxyz.*-]+")
 
-        fun ofString(string: String): Permission?
-        {
-            val colonIndex = string.indexOf(58.toChar())
-            return if (colonIndex <= 0 || string.endsWith(":")) null
-            else
-            {
-                val domain = string.substring(0, colonIndex)
-                val nodepath = string.substring(colonIndex + 1)
-                if (domain.matches(LegalDomainLetters) && nodepath.matches(LegalPathLetters)) Permission(string, domain, *nodepath.split(".".toRegex())
-                        .dropLastWhile { it.isEmpty() }
-                        .toTypedArray())
-                else null
-            }
-        }
+        fun ofString(string: String): Permission = Permission(string)
 
         @JvmStatic
         fun ofString(domain: String, path: String): Permission
         {
-            return Permission("$domain:$path", domain, *path.split(".".toRegex())
-                    .dropLastWhile { it.isEmpty() }
-                    .toTypedArray())
+            return Permission(domain, path)
         }
 
         fun ofNamespace(namespace: NamespaceID, path: String): Permission

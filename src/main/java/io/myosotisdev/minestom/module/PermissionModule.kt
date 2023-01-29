@@ -6,7 +6,7 @@ import net.minestom.server.entity.Player
 import java.util.*
 import kotlin.collections.HashSet
 
-class PermissionModule : Module("permission")
+class PermissionModule : ModuleManager("permission")
 {
     private val operators: MutableSet<UUID> = HashSet()
     val groups: MutableSet<PermissionGroup> = HashSet()

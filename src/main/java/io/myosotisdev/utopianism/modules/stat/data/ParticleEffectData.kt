@@ -10,6 +10,6 @@ class ParticleEffectData : ItemStatData<ParticleEffect>
 
     companion object
     {
-        val Serializer: Serializer<ParticleEffect?> = ParticleTagSerializer()
+        val Serializer: Serializer<ParticleEffect> = ParticleTagSerializer()
     }
 }

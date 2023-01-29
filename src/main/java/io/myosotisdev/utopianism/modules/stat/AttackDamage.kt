@@ -6,8 +6,4 @@ import net.minestom.server.item.ItemStack
 
 class AttackDamage : DoubleStat("attack-damage")
 {
-    override fun onApply(itemStack: ItemStack, data: ItemStatData<in Double>)
-    {
-        super.onApply(itemStack, data)
-    }
 }

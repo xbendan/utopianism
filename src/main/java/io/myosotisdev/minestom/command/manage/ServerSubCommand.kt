@@ -1,15 +1,10 @@
 package io.myosotisdev.minestom.command.manage
 
-import io.myosotisdev.minestom.Minestom.checkPermission
 import io.myosotisdev.minestom.Minestom.stop
 import io.myosotisdev.minestom.command.AbstractCommand
 import io.myosotisdev.minestom.permission.Permission
 import io.myosotisdev.minestom.permission.Permission.Companion.ofString
-import io.myosotisdev.minestom.util.command.Commands
 import io.myosotisdev.utopianism.util.Namespaces
-import net.minestom.server.command.CommandSender
-import net.minestom.server.command.builder.CommandContext
-import net.minestom.server.command.builder.CommandExecutor
 
 class ServerSubCommand(parent: AbstractCommand?) : AbstractCommand(parent, Name)
 {
@@ -35,7 +30,7 @@ class ServerSubCommand(parent: AbstractCommand?) : AbstractCommand(parent, Name)
 
         init
         {
-            addConditionalSyntax(Commands.withPerm(permission(), true), CommandExecutor { sender, context ->
+            addSyntax({ sender, context ->
                 stop()
             })
         }

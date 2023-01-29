@@ -21,6 +21,10 @@
             <id>sonatype-oss-snapshots1</id>
             <url>https://s01.oss.sonatype.org/content/repositories/snapshots/</url>
         </repository>
+        <repository>
+            <id>hypera-snapshots</id>
+            <url>https://repo.hypera.dev/snapshots/</url>
+        </repository>
     </repositories>
 
     <groupId>io.myosotisdev</groupId>
@@ -125,7 +129,7 @@
                         <manifest>
                             <addClasspath>true</addClasspath>
                             <classpathPrefix>lib/</classpathPrefix>
-                            <mainClass>io.myosotisdev.utopianism.MainEntryPoint</mainClass>
+                            <mainClass>io.myosotisdev.utopianism.Entry</mainClass>
                         </manifest>
                     </archive>
                 </configuration>
@@ -143,7 +147,7 @@
                 <configuration>
                     <archive>
                         <manifest>
-                            <mainClass>io.myosotisdev.utopianism.MainEntryPoint</mainClass>
+                            <mainClass>io.myosotisdev.utopianism.Entry</mainClass>
                         </manifest>
                     </archive>
                     <descriptorRefs>

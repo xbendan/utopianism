@@ -1,10 +1,11 @@
 package io.myosotisdev.utopianism.modules
 
-import io.myosotisdev.minestom.module.Module
-import io.myosotisdev.utopianism.Ut
+import io.myosotisdev.minestom.module.ModuleManager
 
-class TaskModule : Module(Ut.ModuleTask)
+class TaskModule : ModuleManager(Name)
 {
+    companion object { val Name: String = "task" }
+
     override fun onEnable()
     {
 
